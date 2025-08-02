@@ -57,7 +57,7 @@ export default function App() {
         <Container>
           <Form onSubmit={handleSearch} />
           {isLoading && <Loader />}
-          {isError && <Text>ERROR!!!</Text>}
+          {isError && <Text>BIG ERROR!!!</Text>}
           {photos.length > 0 && (
             <PhotosGallery photos={photos} onSelect={handlePhotoSelect} />
           )}
