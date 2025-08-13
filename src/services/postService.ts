@@ -1,8 +1,15 @@
 import axios from "axios";
+import { Post } from "../types/post";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
+// interface fetchHttpResponse {
+//   posts: Post[];
+// }
 
-export const fetchPosts = async (searchText, page) => {};
+export const fetchPosts = async (searchText: string, page: number): Promise<Post[]> => {
+  const response = await axios.get<Post[]>({ params: { q: searchText, page } });
+  return response.data;
+};
 
 export const createPost = async (newPost) => {};
 
