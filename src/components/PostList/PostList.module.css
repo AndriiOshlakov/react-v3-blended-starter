@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  width: 100%;
 }
 
 .listItem {
@@ -55,7 +56,8 @@
 
 .edit {
   padding: 0.5rem 1rem;
-  background-color: #40916c; /* зелений, гармонійний до теми */
+  background-color: #40916c;
+  /* зелений, гармонійний до теми */
   color: #fff;
   font-weight: 500;
   border: none;
