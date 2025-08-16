@@ -16,10 +16,6 @@ interface CreatePostFormValues {
   body: string;
 }
 
-// const initialValues: CreatePostFormValues = {
-//   title: "",
-//   body: "",
-// };
 const validationSchema = Yup.object().shape({
   title: Yup.string()
     .min(3, "Title too short")

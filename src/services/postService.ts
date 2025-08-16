@@ -3,12 +3,6 @@ import { CreatePost, Post } from "../types/post";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
 
-// export const fetchPosts = async (search: string, page: number): Promise<Post[]> => {
-//   const response = await axios.get<Post[]>(`/posts/search?q=${search}&limit=10&page=${page}`);
-//   console.log(response.data);
-//   return response.data;
-// };
-
 export interface FetchPostsResponse {
   data: Post[];
   total: number;
@@ -21,7 +15,7 @@ export const fetchPosts = async (search: string, page: number): Promise<FetchPos
   };
 
   if (search.trim()) {
-    params.title_like = search; // пошук по заголовку
+    params.title_like = search;
   }
 
   const response = await axios.get<Post[]>("/posts", { params });
