@@ -16,7 +16,7 @@ import CreatePostForm from '@/components/CreatePostForm/CreatePostForm';
 
 interface PostsClientProps {
   initialData: { posts: Post[]; totalCount: number };
-  userId: string;
+  userId?: string;
 }
 
 export default function PostsClient({ initialData, userId }: PostsClientProps) {
@@ -34,6 +34,7 @@ export default function PostsClient({ initialData, userId }: PostsClientProps) {
         ...(userId !== 'All' && { userId }),
       }),
     placeholderData: keepPreviousData,
+    refetchOnMount: false,
     initialData,
   });
 
@@ -51,6 +52,8 @@ export default function PostsClient({ initialData, userId }: PostsClientProps) {
 
   const totalPages = Math.ceil(data.totalCount / 8);
   const posts = data?.posts ?? [];
+  console.log('DATA:', data);
+  console.log('POSTS:', posts);
 
   return (
     <div className={css.app}>

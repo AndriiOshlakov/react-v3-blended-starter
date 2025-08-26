@@ -55,6 +55,9 @@ export const deletePost = async (postId: number) => {
 
 export const fetchPostById = async () => {};
 
-export const fetchUsers = async () => {};
+export const fetchUsers = async () => {
+  const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  return response.data;
+};
 
 export const fetchUserById = async () => {};
