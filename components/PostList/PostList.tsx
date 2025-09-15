@@ -30,7 +30,7 @@ export default function PostList({ posts, toggleModal, toggleEditPost }: PostLis
           <div className={css.footer}>
             <Link className={css.link} href={`/posts/${post.id}`} scroll={false}>
               View details
-            </Link>{' '}
+            </Link>
             <button
               className={css.link}
               onClick={() => {

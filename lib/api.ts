@@ -20,7 +20,7 @@ export const fetchPosts = async ({
       userId,
       ...(searchText !== '' && { q: searchText }),
       _page: page,
-      _limit: 8,
+      _limit: 12,
     },
   });
   const totalCount = Number(response.headers['x-total-count']);
@@ -53,11 +53,17 @@ export const deletePost = async (postId: number) => {
   return response.data;
 };
 
-export const fetchPostById = async () => {};
-
-export const fetchUsers = async () => {
-  const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
+export const fetchPostById = async (id: string) => {
+  const response = await axios.get<Post>(`/posts/${id}`);
   return response.data;
 };
 
-export const fetchUserById = async () => {};
+export const fetchUsers = async (): Promise<User[]> => {
+  const response = await axios.get<User[]>('/users');
+  return response.data;
+};
+
+export const fetchUserById = async (userId: number): Promise<User> => {
+  const response = await axios.get<User>(`/users/${userId}`);
+  return response.data;
+};
