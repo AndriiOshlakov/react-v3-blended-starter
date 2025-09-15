@@ -16,7 +16,7 @@ export default function Home() {
         </p>
         <p className={css.description}>
           Whether you use Postly for work, study, or personal notes, it adapts to your needs and
-          helps you stay focused on what matters.
+          helps you stay focused on what matters.Some adding.
         </p>
       </div>
     </main>
